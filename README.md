@@ -57,16 +57,16 @@ Now we make transactions.
 
 ```php
 $user = User::first();
-$user->balance; // int(0)
+$user->balance; // double(0)
 
 $user->deposit(10);
-$user->balance; // int(10)
+$user->balance; // double(10)
 
 $user->withdraw(1);
-$user->balance; // int(9)
+$user->balance; // double(9)
 
 $user->forceWithdraw(200, ['description' => 'payment of taxes']);
-$user->balance; // int(-191)
+$user->balance; // double(-191)
 ```
 
 ### Purchases

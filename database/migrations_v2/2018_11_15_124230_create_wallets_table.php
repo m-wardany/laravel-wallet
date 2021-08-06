@@ -27,9 +27,12 @@ class CreateWalletsTable extends Migration
             $table->bigIncrements('id');
             $table->morphs('holder');
             $table->string('name');
+            $table->unsignedTinyInteger('transaction_type')->nullable();
+            $table->unsignedTinyInteger('status')->nullable();
             $table->string('slug')->index();
             $table->string('description')->nullable();
-            $table->decimal('balance', 64, 0)->default(0);
+            $table->double('balance', 10, 3)->default(0);
+            $table->timestamp('expires_at')->nullable();
             $table->timestamps();
 
             $table->unique(['holder_type', 'holder_id', 'slug']);

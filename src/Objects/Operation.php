@@ -70,6 +70,7 @@ class Operation
      */
     public function getAmount()
     {
+        /**return same price without rounding */
         return $this->amount;
     }
 
